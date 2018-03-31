@@ -1,5 +1,7 @@
 00000000: 03488b15     read $r3 (add $r1 0xd22)
 00000001: 02004211     mov $r2 0x801
-00000002: 21005112     mov $r1 (extrinsrt $r2 $r1 0x0 0x4 0x4)
-00000003: 618008a2     exit maddr (extrinsrt $r1 0x0 0x0 0x6 0xc)
+00000002: 21005112     mov $r1 (extrinsrt $r2 $r1 0x0 0x4 0x4)    ; extract bits 0-4 of arg0, put them at bit 4 in r2, r2 = r1
+00000003: 618008a2     exit maddr (extrinsrt $r1 0x0 0x0 0x6 0xc) ; then extract bits 0-6 of r1, put them at bit 12 in r1
 00000004: 00001841     send $r3
+
+; simplified: write_reg(0xd22 + arg0, 0x1801 | (arg0 & 0xf) << 4 | (arg0 & 3) << 16);
