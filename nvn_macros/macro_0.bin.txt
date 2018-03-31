@@ -1,17 +1,26 @@
-00000000: 04744351     parm $r3        ;; loads a param into r3
-                       maddr 0x11d1    ;; sets maddr to 0x11d1
-00000001: 00708215     read $r2 0x1c2  ;; reads 4*0x1c2 into r2
-00000002: 00004041     send 0x1        ;; writes 1 to 0x11d1
+;; r0 always 0 (think "zr" in armv8)
+;; r1 == first param, always present
+;; more params loaded using "parm" instruction
+;; maddr 0xXYYY means set current_reg=0xYYY, reg_incr=0xX
+;; send 0x1 writes 0x1 to current_reg
+;; there is a delay slot like MIPS => one instruction is *after* branch executed
+;; reg 0xd00+ is general-purpose persistent-state (think RAM)
+
+00000000: 04744351     parm $r3       ; arg1 = input()
+                       maddr 0x11d1
+00000001: 00708215     read $r2 0x1c2 ; r2 = read_reg(0x1c2);
+00000002: 00004041     send 0x1       ; write_reg(0x1d1, 1);
 00000003: 20390021     maddr 0x80e4
-00000004: 00000041     send 0x0        ;; write 0 to 0x80e4 (4 times)
-00000005: 00000041     send 0x0
-00000006: 00000041     send 0x0
-00000007: 00000041     send 0x0
+00000004: 00000041     send 0x0       ; write_reg(0xe4, 0);
+00000005: 00000041     send 0x0       ; write_reg(0xe4+8*1, 0);
+00000006: 00000041     send 0x0       ; write_reg(0xe4+8*2, 0);
+00000007: 00000041     send 0x0       ; write_reg(0xe4+8*3, 0);
 00000008: 04180021     maddr 0x1060
-00000009: 00010041     send 0x4
-0000000a: 00004041     send 0x1
-0000000b: 00000841     send $r1
-0000000c: 00001841     send $r3
+00000009: 00010041     send 0x4       ; write_reg(0x60, 4);
+0000000a: 00004041     send 0x1       ; write_reg(0x61, 1);
+0000000b: 00000841     send $r1       ; write_reg(0x61, arg0);
+0000000c: 00001841     send $r3       ; write_reg(0x61, arg1);
 0000000d: 041b0021     maddr 0x106c
-0000000e: 040440c1     exit send 0x1011
-0000000f: 00001041     send $r2
+0000000e: 040440c1     exit send 0x1011 ; write_reg(0x6c, 0x1011);
+0000000f: 00001041     send $r2         ; write_reg(0x6d, r2);
+                                      ; exit()
