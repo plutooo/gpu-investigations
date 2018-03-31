@@ -1,0 +1,28 @@
+00000000: 03470a15     read $r2 (add $r1 0xd1c)
+00000001: 00000401     parm $r4
+00000002: 0004a210     mov $r2 (sub $r4 $r2)
+00000003: 00055007     braz $r2 0x18
+00000004: 00000301     parm $r3
+00000005: 02004211     mov $r2 0x801
+00000006: 21005212     mov $r2 (extrinsrt $r2 $r1 0x0 0x4 0x4)
+00000007: 61801022     maddr (extrinsrt $r2 0x0 0x0 0x6 0xc)
+00000008: 00001841     send $r3
+00000009: 03470a11     mov $r2 (add $r1 0xd1c)
+0000000a: 61801022     maddr (extrinsrt $r2 0x0 0x0 0x6 0xc)
+0000000b: 00002041     send $r4
+0000000c: 03488a11     mov $r2 (add $r1 0xd22)
+0000000d: 61801022     maddr (extrinsrt $r2 0x0 0x0 0x6 0xc)
+0000000e: 00001a31     parm $r2 send $r3
+0000000f: 06380151     parm $r1 maddr 0x18e0
+00000010: 40000041     send 0x10000
+00000011: 02304042     send (extrinsrt 0x0 $r1 0x18 0x8 0x0)
+00000012: 46004042     send (extrinsrt 0x0 $r1 0x0 0x18 0x8)
+00000013: 19c08112     mov $r1 (extrinsrt 0x0 $r2 0x0 0x7 0x3)
+00000014: 02410911     mov $r1 (add $r1 0x904)
+00000015: 618008a2     exit maddr (extrinsrt $r1 0x0 0x0 0x6 0xc)
+00000016: 00044041     send 0x11
+00000017: 00000011     nop
+00000018: 00000281   B exit parm $r2
+00000019: 00000101     parm $r1
+0000001a: 00000091     exit
+0000001b: 00000011     nop

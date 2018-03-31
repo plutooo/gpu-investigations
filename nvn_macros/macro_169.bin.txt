@@ -1,0 +1,5 @@
+00000000: 03488b15     read $r3 (add $r1 0xd22)
+00000001: 02004211     mov $r2 0x801
+00000002: 21005112     mov $r1 (extrinsrt $r2 $r1 0x0 0x4 0x4)
+00000003: 618008a2     exit maddr (extrinsrt $r1 0x0 0x0 0x6 0xc)
+00000004: 00001841     send $r3

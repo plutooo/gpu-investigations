@@ -1,0 +1,18 @@
+00000000: 0346c215     read $r2 0xd1b
+00000001: 00000401     parm $r4
+00000002: 00000301     parm $r3
+00000003: 0014d310     mov $r3 (and $r2 $r3)
+00000004: 00d74061     parmsend maddr 0x35d
+00000005: 0002d807     braz $r3 0x10
+00000006: 01438061     parmsend maddr 0x50e
+00000007: 01618021   B maddr 0x586
+00000008: 00000841     send $r1
+00000009: 00d78021     maddr 0x35e
+0000000a: 00002041     send $r4
+0000000b: 01614071     maddrsend 0x585
+0000000c: ffffdb11     mov $r3 (add $r3 0xffffffffffffffff)
+0000000d: 00004211     mov $r2 0x1
+0000000e: fffe5817     branz $r3 0x7
+0000000f: d0808912     mov $r1 (extrinsrt $r1 $r2 0x0 0x2 0x1a)
+00000010: 014380f1   B exit maddrsend 0x50e
+00000011: 00000011     nop

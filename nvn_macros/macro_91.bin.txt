@@ -1,0 +1,87 @@
+00000000: 0346c215     read $r2 0xd1b
+00000001: 00000e11     mov $r6 $r1
+00000002: 00000501     parm $r5
+00000003: 00000101     parm $r1
+00000004: 03420021     maddr 0xd08
+00000005: 00000841     send $r1
+00000006: 00000401     parm $r4
+00000007: 00011017     branz $r2 0xb
+00000008: 00000701     parm $r7
+00000009: 000f0007     bra 0x45
+0000000a: 0005ad10     mov $r5 (sub $r5 $r6)
+0000000b: 0005ea10   B mov $r2 (sub $r5 $r7)
+0000000c: f87e8212     mov $r2 (extrinsrt 0x0 $r2 0x1f 0x1 0x1f)
+0000000d: 00009027     braz annul $r2 0xf
+0000000e: 00002f11     mov $r7 $r5
+0000000f: 0005f210   B mov $r2 (sub $r6 $r7)
+00000010: f87e8212     mov $r2 (extrinsrt 0x0 $r2 0x1f 0x1 0x1f)
+00000011: 000cd027     braz annul $r2 0x44
+00000012: 03420115     read $r1 0xd08
+00000013: 0005ed10     mov $r5 (sub $r5 $r7)
+00000014: 00004211     mov $r2 0x1
+00000015: 03424021     maddr 0xd09
+00000016: d0808912     mov $r1 (extrinsrt $r1 $r2 0x0 0x2 0x1a)
+00000017: 00000841     send $r1
+00000018: 0005f210   B mov $r2 (sub $r6 $r7)
+00000019: 00091027     braz annul $r2 0x3d
+0000001a: 00000301     parm $r3
+0000001b: 00000201     parm $r2
+0000001c: 00d74061     parmsend maddr 0x35d
+0000001d: 01438151     parm $r1 maddr 0x50e
+0000001e: 00000841     send $r1
+0000001f: 0638c021     maddr 0x18e3
+00000020: 01910041     send 0x644
+00000021: 00000841     send $r1
+00000022: 00049007     braz $r2 0x34
+00000023: 00003041     send $r6
+00000024: 03420115     read $r1 0xd08
+00000025: 01618021     maddr 0x586
+00000026: 00000841     send $r1
+00000027: 00d78021     maddr 0x35e
+00000028: ffffd211     mov $r2 (add $r2 0xffffffffffffffff)
+00000029: 00001841     send $r3
+0000002a: 00029007     braz $r2 0x34
+0000002b: 01614071     maddrsend 0x585
+0000002c: 03424115   B read $r1 0xd09
+0000002d: 01618021     maddr 0x586
+0000002e: 00000841     send $r1
+0000002f: 00d78021     maddr 0x35e
+00000030: ffffd211     mov $r2 (add $r2 0xffffffffffffffff)
+00000031: 00001841     send $r3
+00000032: fffe9017     branz $r2 0x2c
+00000033: 01614071     maddrsend 0x585
+00000034: fff92007   B braz $r4 0x18
+00000035: 00007611     mov $r6 (add $r6 0x1)
+00000036: 0005f210     mov $r2 (sub $r6 $r7)
+00000037: fff85027     braz annul $r2 0x18
+00000038: 00002211     mov $r2 $r4
+00000039: ffffd211   B mov $r2 (add $r2 0xffffffffffffffff)
+0000003a: ffffd017     branz $r2 0x39
+0000003b: 00000101     parm $r1
+0000003c: fff70027     bra annul 0x18
+0000003d: 00022027   B braz annul $r4 0x45
+0000003e: 0001e827     braz annul $r5 0x45
+0000003f: 00002211     mov $r2 $r4
+00000040: ffffd211   B mov $r2 (add $r2 0xffffffffffffffff)
+00000041: ffffd017     branz $r2 0x40
+00000042: 00000101     parm $r1
+00000043: 00008027     bra annul 0x45
+00000044: 0005ad10   B mov $r5 (sub $r5 $r6)
+00000045: 00036827   B braz annul $r5 0x52
+00000046: 00000101   B parm $r1
+00000047: 00000101     parm $r1
+00000048: 00000101     parm $r1
+00000049: ffffed11     mov $r5 (add $r5 0xffffffffffffffff)
+0000004a: 0001e007     braz $r4 0x51
+0000004b: 00000101     parm $r1
+0000004c: 00016827     braz annul $r5 0x51
+0000004d: 00002211     mov $r2 $r4
+0000004e: ffffd211   B mov $r2 (add $r2 0xffffffffffffffff)
+0000004f: ffffd017     branz $r2 0x4e
+00000050: 00000101     parm $r1
+00000051: fffd6837   B branz annul $r5 0x46
+00000052: 01438071   B maddrsend 0x50e
+00000053: 0638c021     maddr 0x18e3
+00000054: 01910041     send 0x644
+00000055: 000000c1     exit send 0x0
+00000056: 00000041     send 0x0

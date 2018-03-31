@@ -1,0 +1,6 @@
+00000000: 03460215     read $r2 0xd18
+00000001: 06380021     maddr 0x18e0
+00000002: 17c00041     send 0x5f00
+00000003: 02308042     send (extrinsrt 0x0 $r2 0x18 0x8 0x0)
+00000004: 460080c2     exit send (extrinsrt 0x0 $r2 0x0 0x18 0x8)
+00000005: 17804042     send (extrinsrt 0x0 $r1 0x0 0x1e 0x2)

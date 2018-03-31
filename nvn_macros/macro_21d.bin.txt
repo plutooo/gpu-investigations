@@ -1,0 +1,9 @@
+00000000: 034a0215     read $r2 0xd28
+00000001: ffffd211     mov $r2 (add $r2 0xffffffffffffffff)
+00000002: 00015037     branz annul $r2 0x7
+00000003: 042fc071     maddrsend 0x10bf
+00000004: 0436c071     maddrsend 0x10db
+00000005: 095300f1     exit maddrsend 0x254c
+00000006: 0036c071     maddrsend 0xdb
+00000007: 00000091   B exit
+00000008: 00000011     nop

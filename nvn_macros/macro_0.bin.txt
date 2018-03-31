@@ -1,0 +1,17 @@
+00000000: 04744351     parm $r3        ;; loads a param into r3
+                       maddr 0x11d1    ;; sets maddr to 0x11d1
+00000001: 00708215     read $r2 0x1c2  ;; reads 4*0x1c2 into r2
+00000002: 00004041     send 0x1        ;; writes 1 to 0x11d1
+00000003: 20390021     maddr 0x80e4
+00000004: 00000041     send 0x0        ;; write 0 to 0x80e4 (4 times)
+00000005: 00000041     send 0x0
+00000006: 00000041     send 0x0
+00000007: 00000041     send 0x0
+00000008: 04180021     maddr 0x1060
+00000009: 00010041     send 0x4
+0000000a: 00004041     send 0x1
+0000000b: 00000841     send $r1
+0000000c: 00001841     send $r3
+0000000d: 041b0021     maddr 0x106c
+0000000e: 040440c1     exit send 0x1011
+0000000f: 00001041     send $r2
