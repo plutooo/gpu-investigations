@@ -1,11 +1,10 @@
-00000000: 210c4212     mov $r2 (extrinsrt 0x0 $r1 0x6 0x4 0x4) ; r2 = weird_op(r1)
-00000001: 00819215     read $r2 (add $r2 0x206)                ; r2 = *(r2 + 0x206)
-00000002: 00019027     braz annul $r2 0x8                      ; ---+ if (r2 != 8)
-00000003: 019d0021   B maddr 0x674                             ;    | {
-00000004: ffffd211     mov $r2 (add $r2 0xffffffffffffffff)    ;    |    r2 -= 1;
-00000005: 00000841     send $r1                                ;    |    REG(0x674) = r1;
-00000006: ffff5097     exit branz $r2 0x3                      ;    |    exit() if r2 == 3; <-- ????
-                                                               ;    |    r1 += 0x400;
-00000007: 01000911     mov $r1 (add $r1 0x400)                 ;    | }
-00000008: 00000091   B exit                                    ; <--+ exit();
+00000000: 210c4212     mov $r2 (extrinsrt 0x0 $r1 0x6 0x4 0x4)
+00000001: 00819215     read $r2 (add $r2 0x206)
+00000002: 00019027     braz annul $r2 0x8
+00000003: 019d0021   B maddr 0x674
+00000004: ffffd211     mov $r2 (add $r2 0xffffffffffffffff)
+00000005: 00000841     send $r1
+00000006: ffff5097     exit branz $r2 0x3
+00000007: 01000911     mov $r1 (add $r1 0x400)
+00000008: 00000091   B exit
 00000009: 00000011     nop
