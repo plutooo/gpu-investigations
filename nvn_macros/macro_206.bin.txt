@@ -5,8 +5,8 @@
 00000004: 460080c2     exit send (extrinsrt 0x0 $r2 0x0 0x18 0x8)
 00000005: 17804042     send (extrinsrt 0x0 $r1 0x0 0x1e 0x2)
 
-; u32 v = read_reg(0xd18);
-; write_reg(0x8e0, 0x5f00);
-; write_reg(0x8e1, (v >> 18) & 0xff);
-; write_reg(0x8e2, (v & 0x3ffff) << 8);
-; write_reg(0x8e3, arg0 << 2);
+; u32 addr = RAM[0x18];
+; write_reg(ConstantBufferSelectorSize, 0x5f00);
+; write_reg(ConstantBufferSelectorAddrHigh, (addr >> 18) & 0xff);
+; write_reg(ConstantBufferSelectorAddrLow, (addr & 0x3ffff) << 8);
+; write_reg(LoadConstantBufferOffset, arg0 << 2);

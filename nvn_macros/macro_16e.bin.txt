@@ -6,3 +6,9 @@
 00000005: 00000841     send $r1
 00000006: 000010c1     exit send $r2
 00000007: 00001841     send $r3
+
+; u32 addr = RAM[0x2a + arg0];
+; u32 size = RAM[0x2f + arg0];
+; write_reg(ConstantBufferSelectorSize, size);
+; write_reg(ConstantBufferSelectorAddrHigh, (addr >> 18) & 0xff);
+; write_reg(ConstantBufferSelectorAddrLow, (addr & 0x3ffff) << 8);
