@@ -9,3 +9,6 @@
 00000008: 00001841     send $r3
 00000009: 00000091   B exit
 0000000a: 00000011     nop
+
+; if (arg1 == RAM[0x1C + arg0])
+;    write_reg(0x803 | (arg0 & 0xf) << 4, arg2);
