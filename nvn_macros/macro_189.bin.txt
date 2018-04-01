@@ -2,3 +2,8 @@
 00000001: 00000931     parm $r1 send $r1
 00000002: 000009b1     exit parm $r1 send $r1
 00000003: 00000841     send $r1
+
+; did I get the parameters in the right order?
+; write_reg(ConstantBufferSelectorSize, arg0);
+; write_reg(ConstantBufferSelectorAddrHigh, arg1);
+; write_reg(ConstantBufferSelectorAddrLow, arg2);
