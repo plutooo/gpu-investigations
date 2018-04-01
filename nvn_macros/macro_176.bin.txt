@@ -1,6 +1,6 @@
-00000000: 019c4071     maddrsend 0x671
+00000000: 019c4071     maddrsend 0x671                              ; write_reg(0x671, 0);
 00000001: 05360021     maddr 0x14d8
-00000002: 00504042     send (extrinsrt 0x0 $r1 0x8 0x1 0x0)
+00000002: 00504042     send (extrinsrt 0x0 $r1 0x8 0x1 0x0)         ; send bit 8 of r1, etc.
 00000003: 00524042     send (extrinsrt 0x0 $r1 0x9 0x1 0x0)
 00000004: 00544042     send (extrinsrt 0x0 $r1 0xa 0x1 0x0)
 00000005: 00564042     send (extrinsrt 0x0 $r1 0xb 0x1 0x0)
@@ -8,3 +8,9 @@
 00000007: 005a4042     send (extrinsrt 0x0 $r1 0xd 0x1 0x0)
 00000008: 005c40c2     exit send (extrinsrt 0x0 $r1 0xe 0x1 0x0)
 00000009: 005e4042     send (extrinsrt 0x0 $r1 0xf 0x1 0x0)
+
+; simplified result:
+
+write_reg(0x671, 0);
+for(u32 i = 0; i < 8; i++)
+    write_reg(0x4d8, (arg0 >> i) & 1);
