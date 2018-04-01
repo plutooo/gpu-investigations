@@ -4,4 +4,5 @@
 00000003: 618008a2     exit maddr (extrinsrt $r1 0x0 0x0 0x6 0xc) ; then extract bits 0-6 of r1, put them at bit 12 in r1
 00000004: 00001841     send $r3
 
-; simplified: write_reg(0xd22 + arg0, 0x1801 | (arg0 & 0xf) << 4 | (arg0 & 3) << 16);
+; simplified (need to check extrinsrt dst 0 syntax):
+; write_reg(0x801 | (arg0 & 0xf) << 4, RAM + 0x22 + arg0);

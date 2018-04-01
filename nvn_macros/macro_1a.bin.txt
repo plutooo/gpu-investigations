@@ -7,3 +7,6 @@
 00000006: 01000911     mov $r1 (add $r1 0x400)
 00000007: 00000091   B exit
 00000008: 00000011     nop
+
+; simplified:
+; for(u32 n = read_reg(0x48c), val = arg0; n > 0; n--, val += 0x400) write_reg(0x674, val);
